@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.forohub.forohub.domain.autor.Autor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Setter
 public class Usuario implements UserDetails {
 
     @Id
@@ -25,7 +27,7 @@ public class Usuario implements UserDetails {
 
     private String email;
 
-    @Column(name = "contrasenia") 
+    @Column(name = "contrasenia")
     private String contrasenia;
 
     @ManyToOne(fetch = FetchType.LAZY)

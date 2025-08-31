@@ -30,4 +30,8 @@ public class Autor {
     public Autor(@Valid DatosRegistroAutor datos) {
         this.nombre = datos.nombre();
     }
+
+    public void eliminar() {
+        this.activo = false;
+    }
 }

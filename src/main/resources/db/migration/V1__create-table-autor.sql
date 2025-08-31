@@ -1,7 +1,6 @@
 CREATE TABLE autor (
     id BIGINT AUTO_INCREMENT NOT NULL,
     nombre VARCHAR(100) NOT NULL,
-    apellido VARCHAR(100) NOT NULL,
     estado TINYINT NOT NULL DEFAULT 1,
     PRIMARY KEY (id)
 );

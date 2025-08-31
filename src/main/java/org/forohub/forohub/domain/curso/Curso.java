@@ -2,15 +2,15 @@ package org.forohub.forohub.domain.curso;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import jakarta.validation.Valid;
+import lombok.*;
+
 @Table(name = "curso")
 @Entity(name = "curso")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+
 @EqualsAndHashCode(of = "id")
 public class Curso {
     @Id
@@ -23,5 +23,14 @@ public class Curso {
 
 
 
+    public Curso(@Valid DatosRegistroCurso datos) {
+        this.nombre = datos.nombre();
+        this.categoria = datos.categoria();
+        this.activo = true;
+    }
 
+
+    public void eliminar() {
+        this.activo = false;
+    }
 }
